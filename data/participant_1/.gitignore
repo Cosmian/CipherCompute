@@ -1,0 +1,6 @@
+*
+!.gitignore
+!*.csv
+!scale_mamba/
+!scale_mamba/certificates/
+!scale_mamba/certificates/*

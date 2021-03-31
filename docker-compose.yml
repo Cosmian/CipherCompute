@@ -1,0 +1,175 @@
+version: "3.2"
+services:
+  #
+  ## Databases
+  #
+  db_0:
+    container_name: db_0
+    image: postgres
+    environment:
+      - POSTGRES_DB=orchestrator
+      - POSTGRES_USER=orchestrator
+      - POSTGRES_PASSWORD=orchestrator
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/participant_0:/var/lib/postgresql/data
+
+  db_1:
+    container_name: db_1
+    image: postgres
+    environment:
+      - POSTGRES_DB=orchestrator
+      - POSTGRES_USER=orchestrator
+      - POSTGRES_PASSWORD=orchestrator
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/participant_1:/var/lib/postgresql/data
+
+  db_2:
+    container_name: db_2
+    image: postgres
+    environment:
+      - POSTGRES_DB=orchestrator
+      - POSTGRES_USER=orchestrator
+      - POSTGRES_PASSWORD=orchestrator
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./data/participant_2:/var/lib/postgresql/data
+
+  #
+  ## Runtime players
+  #
+  runtime_0:
+    container_name: runtime_0
+    image: cosmian/ciphercompute:latest
+    environment:
+      - PUBLIC_SERVER_NAME=localhost
+      - PUBLIC_SERVER_ADDRESS=http://localhost:10000
+    volumes:
+      - ./data/participant_0:/root/cosmian_data
+    ports:
+      - "10000:10000"
+      - "5000:5000"
+    entrypoint: /bin/bash
+    command: -c "source /root/bashrc && /root/cosmian_server/cosmian_server --public_server_name localhost --root_dir /root/cosmian_data --port 10000 --public_mpc_port 5000"
+
+  runtime_1:
+    container_name: runtime_1
+    image: cosmian/ciphercompute:latest
+    environment:
+      - PUBLIC_SERVER_NAME=localhost
+      - PUBLIC_SERVER_ADDRESS=http://localhost:10001
+    volumes:
+      - ./data/participant_1:/root/cosmian_data
+    ports:
+      - "10001:10001"
+      - "5001:5001"
+    entrypoint: /bin/bash
+    command: -c "source /root/bashrc && /root/cosmian_server/cosmian_server --public_server_name localhost --root_dir /root/cosmian_data --port 10001 --public_mpc_port 5001"
+
+  runtime_2:
+    container_name: runtime_2
+    image: cosmian/ciphercompute:latest
+    environment:
+      - PUBLIC_SERVER_NAME=localhost
+      - PUBLIC_SERVER_ADDRESS=http://localhost:10002
+    volumes:
+      - ./data/participant_2:/root/cosmian_data
+    ports:
+      - "10002:10002"
+      - "5002:5002"
+    entrypoint: /bin/bash
+    command: -c "source /root/bashrc && /root/cosmian_server/cosmian_server --public_server_name localhost --root_dir /root/cosmian_data --port 10002 --public_mpc_port 5002"
+
+  #
+  ## Orchestrators
+  #
+  orchestrator_0:
+    container_name: orchestrator_0
+    image: cosmian/orchestrator:latest
+    environment:
+      - SERVER_NAME=Participant_0
+      - SERVER_ADDRESS=http://orchestrator_0:9000
+      - ROOT_DIR=/root/cosmian_data
+      - PORT=9000
+      - RUNTIME_PORT=10000
+      - RUNTIME_ADDRESS=http://runtime_0:10000
+      - PERSIST_DATA=true
+      - DATABASE_URL=postgres://orchestrator:orchestrator@db_0/orchestrator
+    volumes:
+      - ./data/participant_0:/root/cosmian_data
+    ports:
+      - "9000:9000"
+    command: /root/cosmian_server/orchestrator
+    depends_on:
+      - runtime_0
+      - db_0
+
+  orchestrator_1:
+    container_name: orchestrator_1
+    image: cosmian/orchestrator:latest
+    environment:
+      - SERVER_NAME=Participant_1
+      - SERVER_ADDRESS=http://orchestrator_1:9001
+      - ROOT_DIR=/root/cosmian_data
+      - PORT=9001
+      - RUNTIME_PORT=10001
+      - RUNTIME_ADDRESS=http://runtime_1:10001
+      - PERSIST_DATA=true
+      - DATABASE_URL=postgres://orchestrator:orchestrator@db_1/orchestrator
+    volumes:
+      - ./data/participant_1:/root/cosmian_data
+    ports:
+      - "9001:9001"
+    command: /root/cosmian_server/orchestrator
+    depends_on:
+      - runtime_1
+      - db_1
+
+  orchestrator_2:
+    container_name: orchestrator_2
+    image: cosmian/orchestrator:latest
+    environment:
+      - SERVER_NAME=Participant_2
+      - SERVER_ADDRESS=http://orchestrator_2:9002
+      - ROOT_DIR=/root/cosmian_data
+      - PORT=9002
+      - RUNTIME_PORT=10002
+      - RUNTIME_ADDRESS=http://runtime_2:10002
+      - PERSIST_DATA=true
+      - DATABASE_URL=postgres://orchestrator:orchestrator@db_2/orchestrator
+    volumes:
+      - ./data/participant_2:/root/cosmian_data
+    ports:
+      - "9002:9002"
+    command: /root/cosmian_server/orchestrator
+    depends_on:
+      - runtime_2
+      - db_2
+
+  #
+  ## UI
+  #
+  orchestrator_ui_0:
+    container_name: orchestrator_ui_0
+    image: cosmian/orchestrator_ui:latest
+    environment:
+      - REACT_APP_API_URL=http://localhost:9000
+    ports:
+      - "3000:80"
+
+  orchestrator_ui_1:
+    container_name: orchestrator_ui_1
+    image: cosmian/orchestrator_ui:latest
+    environment:
+      - REACT_APP_API_URL=http://localhost:9001
+    ports:
+      - "3001:80"
+
+  orchestrator_ui_2:
+    container_name: orchestrator_ui_2
+    image: cosmian/orchestrator_ui:latest
+    environment:
+      - REACT_APP_API_URL=http://localhost:9002
+    ports:
+      - "3002:80"

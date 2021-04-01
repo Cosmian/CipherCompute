@@ -42,7 +42,7 @@ Steps:
 
 Security issues:
 - UI is running without HTTPs
-- communication between orchestrators are NOT encrypted at the moment and are performed directly from orchestrators to orchestrators
+- communications between orchestrators are NOT encrypted at the moment and are performed directly from orchestrators to orchestrators
 
 Others:
 - cookies are shared among browser, using the same browser for the 3 UIs will make you re-login each time you jump from one UI to another. Normally the 3 UIs are used from different people. To solve this, please use different browsers (i.e.: firefox, firefox incognito mode, brave)

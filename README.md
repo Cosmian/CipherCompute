@@ -14,7 +14,7 @@ Let's say we want to find common IDs between 2 CSV datasets:
 - [dataset participant 0](data/participant_0/data.csv)
 - [dataset participant 1](data/participant_1/data.csv)
 
-The 2 datasets are owned by two companies and are very sensitive, so they cannot be shared in cleartext to each other participants.
+These 2 datasets are owned by two companies and are very sensitive, so they cannot be shared in cleartext to each other participants.
 
 An MPC (Multi-Party Computation) program has been designed in Rust to compute a merge join and will be used in this example.
 

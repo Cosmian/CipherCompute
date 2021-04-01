@@ -16,7 +16,7 @@ Let's say we want to find common IDs between 2 CSV datasets:
 
 These 2 datasets are owned by two companies and are very sensitive, so they cannot be shared in cleartext to each other participants.
 
-An MPC (Multi-Party Computation) program has been designed in Rust to compute a merge join and will be used in this example.
+This MPC (Multi-Party Computation) program has been designed in Rust to compute a merge join and will be used in this example.
 
 The MPC system requires 3 participants at minimum, so in this example one participant will play the role of an arbiter.
 

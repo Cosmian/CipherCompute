@@ -21,7 +21,7 @@ This MPC (Multi-Party Computation) program has been designed in Rust to compute 
 The MPC system requires 3 participants at minimum, so in this example one participant will play the role of an arbiter.
 
 Steps:
-- start 3 different browsers (see known issues) and connect the UIs (login: `hello@world.com` / pwd: `azerty`):
+- start 3 different browsers (see [known issues](#known-issues)) and connect the UIs (login: `hello@world.com` / pwd: `azerty`):
   - participant 0 - http://localhost:3000
   - participant 1 - http://localhost:3001
   - participant 2 - http://localhost:3002

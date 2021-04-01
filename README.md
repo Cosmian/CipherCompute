@@ -36,7 +36,7 @@ Steps:
 
 ## Create your own MPC program written in Rust
 
-Try our MPC code template generator: https://github.com/Cosmian/mpc_rust_template
+[Try our MPC code template generator](https://github.com/Cosmian/mpc_rust_template)
 
 ## Known issues
 

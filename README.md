@@ -27,7 +27,7 @@ Steps:
   - participant 2 - http://localhost:3002
 - go to participant 0 UI
 - create a new computation using the wizard and specify required datasource (take a look at mentioned CSV datasets)
-- specify the MPC code that will be run (i.e.: [mpc_join_2_participants](https://github.com/Cosmian/mpc_join_2_participants)) to perform this merge join operation
+- specify the MPC code that will be run (i.e.: [mpc_join_2_participants](https://github.com/Cosmian/mpc_join_2_participants.git)) to perform this merge join operation
 - specify which data from the dataset will be used (i.e.: which column of your CSV file)
 - go to participant 1 UI, specify the datasource that will be used and then approve pending computation
 - go to participant 2 UI and approve pending computation

@@ -117,6 +117,7 @@ Fill in the computation details:
  - Commit: the exact version of the code: `d52b4d9f8af20efce51ff79f3a5950dadb553d76`
  - Code preview url: an URL other participants can click to have a quick look at the code: https://github.com/Cosmian/mpc_millionaires/blob/main/src/main.rs
  - Description: something meaningful for Bob and Charlie: `Who is the richest ?`
+ 
 ![computation part 1](./images/computation_part_1.png)
 
 
@@ -185,10 +186,11 @@ Review all the data entered and click `Approve`
 ![approve](./images/approve.png)
 
 The computation is now submitted for approval to all other participants.
+
 ![missing approvals](./images/missing_approvals.png)
 
 
-Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3001) and perform the same steps to link their datasets. All data to enter is identical except for the files:
+Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3002) and perform the same steps to link their datasets. All data to enter is identical except for the files:
 
  - Bob: `bob.csv`
  - Charlie: `charlie.csv`

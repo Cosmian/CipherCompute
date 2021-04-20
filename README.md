@@ -200,13 +200,16 @@ Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3001
 
 ### Run the Computation
 
+The rust code is going to be pulled on all the machines, compiled and interactively executed.
+When the computation completes (about 30 seconds), Alice screen should display the results
 
+![results_alice](./images/results_alice.png)
 
 ## Congratulations and next steps
 
 You have now run your first MPC computation !
 
-Please have look at other readily available computations in the [Github Cosmian repository](https://github.com/Cosmian) - those starting with `mpc_`, the `mpc_join` in particular which forms the base of many confidential data sciences projects.
+Please have look at other readily available computations in the [Github Cosmian repository](https://github.com/Cosmian) - those starting with `mpc_`, the [mpc_join](https://github.com/Cosmian/mpc_join) in particular which is the base of many confidential data sciences projects.
 
 These projects provide documentation to help you get started hacking your own MPC code.
 
@@ -215,7 +218,7 @@ These projects provide documentation to help you get started hacking your own MP
 
 These are EAPs, not production versions:
 - UIs are accessed on plain HTTP
-- communication between components __other than the communication linked to the MPC protocol which is formally proven secure__ is NOT encrypted.
+- communication between components __other than the communication linked to the MPC protocol which is encrypted and formally proven secure__ is NOT encrypted.
 
 Others:
 - cookies are shared among browser: using the same browser for the 3 participants UIs will have you re-login each time you jump from one participant to another because they all run on `localhost`. In production, the 3 UIs are used by different participants on different domains. To work around this, annoyance, we suggest to use different browsers for every participant (i.e.: firefox, firefox incognito mode, brave, chromium,...)

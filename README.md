@@ -29,16 +29,16 @@ Given the genericity and expressiveness of `rust` to write algorithms, CipherCom
 
 The EAP version of CipherCompute in this repository mostly relies on an advanced cryptographic primitive known as **Secure Multi-Party Computation** and software developed in a joint effort with the University of KU Leuven around the [SCALE](https://github.com/KULeuven-COSIC/SCALE-MAMBA) engine. 
 
-In a nutshell MPC offers the ability to perform a confidential collaborative computation without moving or sharing data and by distributing an algorithm on participants servers which will interact during the computation phase, exchanging encrypted intermediate results. It is formally, mathematically proven that these exchanges do not reveal anything of the actual data behind the servers.
+In a nutshell MPC offers the ability to perform a confidential collaborative computation without moving or sharing data and by distributing an algorithm on participants servers. The servers will interact during the computation phase ard exchange encrypted intermediate results. It is formally proven that these exchanges do not reveal anything of the actual data behind the servers.
 
-That participants data does not move is one of the most attractive aspect of sMPC: RGPD compliance, reduced CyberSecurity risk, etc...
+That participants data does not move, is one of the most attractive aspect of sMPC: improved RGPD compliance, reduced CyberSecurity risk, etc...
 
 For additional details on Cosmian, our relationship with the (cryptography) academia and the technologies we use, please check our [website](https://cosmian.com).
 
 
 ## Free access to EAPs for developers and experimentation
 
-Instructions below will install in a single step a developer version which is a set of 3 CipherCompute instances, each representing a participant to a confidential computation. You will be running on your computer your first confidential computation (the Millionaires) in minutes and start hacking algorithms, for free.
+Instructions below will install in a single step a developer version which is a set of 3 CipherCompute instances, each representing a participant to a confidential computation. You will be running on your computer your first confidential computation (the Millionaires) in minutes and start hacking MPC algorithms, for free.
 
 The CipherCompute versions installed are full featured and are the EAP (Early Access Program) versions. EAPs may contain features not yet available in the production versions but which are still unstable. EAPs auto-expire after 90 days and are not meant for running computations in production, but are sufficient however to develop and test MPC production grade algorithms.
 

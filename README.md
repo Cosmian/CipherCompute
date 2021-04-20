@@ -5,6 +5,10 @@ CipherCompute is the [Cosmian](https://cosmian.com) product that enables **colla
 
  - [The millionaires](the-millionaires)
  - [Secure Multi-Party Computation (sMPC)](#secure-multi-party-computation-smpc)
+ - [Free access to EAPs for developers and experimentation](#free-access-to-eaps-for-developers-and-experimentation)
+ - [Install & Start](#install-&-start)
+ - [Quickstart Guide](#quickstart-guide)
+ - [Congratulations and next steps](congratulations-and-next-steps)
 
 
 ## The millionaires
@@ -152,27 +156,27 @@ Review the Computation and click `Submit Draft`
 
 ### Provide access to the dataset and approve the computation
 
-Now that the computation has been specified, participant 0 needs to link its dataset to an actual data source and approve the computation.
+Now that the computation has been specified, Alice, Bob and Charlie need to link their actual dataset to the computation and approve it.
 
-On participant 0 from the `Computations` menu, access the computation and click `Provide dataset`
+On Alice, from the `Computations` menu, access the computation by clicking `Review` and click `Provide dataset` at the bottom of the screen
 
 ![provide dataset](./images/provide_dataset.png)
 
 then fill in the required details:
 
- - Name: `Customer Sales`
- - Description: `A 2 column dataset (customer id, sales amount) sorted by customer id`
+ - Name: `Alice Wealth`
+ - Description: `A 2 column dataset (year, wealth) sorted by year ascending`
  - Source type: select `CSV` which is the only source type supported by the developer version
- - Source URL `./data.csv`. The csv file is already available in the `./data/participant_0` folder which is the data root folder for participant 0
- - CSV Column Names: enter `id` and ` sales`
+ - Source URL `alice.csv`. The csv file is already available in the `./data/participant_0` folder which is the data root folder for Alice
+ - CSV Column Names: enter `year` and ` wealth`
  - Columns separator: `,`
  - Headers on first line: `No`
  - Decimal separator: `.`
  - Columns: map:
-    - `id` > `id` 
-    - `sales` > ` sales`
+    - `year` > `year` 
+    - `wealth` > ` wealth`
 
-  Click `Submit Datasource`
+  Click `Submit datasource`
 
 ![datasource](./images/datasource.png)
 
@@ -182,35 +186,32 @@ Review all the data entered and click `Approve`
 
 The computation is now submitted for approval to all other participants.
 ![missing approvals](./images/missing_approvals.png)
-.
-.
-.
-.
-.
-.
-.
+
+
+Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3001) and perform the same steps to link their datasets. All data to enter is identical except for the files:
+
+ - Bob: `bob.csv`
+ - Charlie: `charlie.csv`
+
+ Once completed, go back to Alice and  from the `Computations` menu, access the computation by clicking `Review`. All participants have now approved the computation and it is ready to run
+
+ ![all_aprroved](./images/all_approved.png)
+
+
+### Run the Computation
 
 
 
-Steps:
-- start 3 different browsers (see [known issues](#known-issues)) and connect the UIs (login: `hello@world.com` / pwd: `azerty`):
-  - participant 0 - http://localhost:3000
-  - participant 1 - http://localhost:3001
-  - participant 2 - http://localhost:3002
-- go to participant 0 UI
-- create a new computation using the wizard and specify required datasource (take a look at mentioned CSV datasets)
-- specify the MPC code that will be run (i.e.: [mpc_join_2_participants](https://github.com/Cosmian/mpc_join_2_participants.git)) to perform this merge join operation
-- specify which data from the dataset will be used (i.e.: which column of your CSV file)
-- go to participant 1 UI, specify the datasource that will be used and then approve pending computation
-- go to participant 2 UI and approve pending computation
-- go back to participant 0 UI, do a final review and run the computation
-- check the results
+## Congratulations and next steps
 
-## Create your own MPC program written in Rust
+You have now run your first MPC computation !
 
-[Try our MPC code template generator](https://github.com/Cosmian/mpc_rust_template)
+Please have look at other readily available computations in the [Github Cosmian repository](https://github.com/Cosmian) - those starting with `mpc_`, the `mpc_join` in particular which forms the base of many confidential data sciences projects.
 
-## Known issues with the developer version
+These projects provide documentation to help you get started hacking your own MPC code.
+
+
+## Known caveats with the EAP developer version
 
 These are EAPs, not production versions:
 - UIs are accessed on plain HTTP

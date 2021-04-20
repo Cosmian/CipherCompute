@@ -203,9 +203,16 @@ Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3002
 ### Run the Computation
 
 The rust code is going to be pulled on all the machines, compiled and interactively executed.
-When the computation completes (about 30 seconds), Alice screen should display the results
+When the computation completes (about 30 seconds), Alice screen will display the results
+
+ - column 1: the year
+ - column 2: Alice wealth
+ - column 3: the sum of the 3 wealths
+ - column 4: Alice rank
 
 ![results_alice](./images/results_alice.png)
+
+Check Bob and Charlie results on their own instance.
 
 ## Congratulations and next steps
 

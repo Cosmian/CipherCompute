@@ -93,8 +93,8 @@ A relationship must first be established between the participants: Participant 0
 Now login to Bob at http://localhost:3001 to accept the invitation
 
  - click on `Participants` in the main menu 
- - accept participant 0 by clicking on the accept button
- - 
+ - accept participant 0 (Alice) by clicking on the accept button
+ 
  ![accept participant](./images/accept_participant.png)
  
  - Redo the same operation to add Charlie as participant 2 with URL: `http://orchestrator_2:9002`

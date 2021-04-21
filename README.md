@@ -25,11 +25,11 @@ CipherCompute provides them with all the tools to
 
 Given the genericity and expressiveness of `rust` to write algorithms, CipherCompute is used to solve many different collaborative confidential computation problems across many industries (banking, health, industrial, defense etc...):
 
- - Key Performance Indicators comparaisons beween entities that do mot want to share their financial and operational data (the business version of the millionaires)
+ - Key Performance Indicators comparaisons beween entities that do not want to share their financial and operational data (the business version of the millionaires)
  - Datasets Generation and Anonymization from confidential sources for Data Science and Federated Learning (see [mpc_join](https://github.com/Cosmian/mpc_join))
  - Collision and Interception detection from confidential trajectory sources
- - Pathology scoring algorithms from confidential hospital records and medcal sensors readings
- - Augmented collaborative cyberscurity threat detection using secret comparaisons of IOCs
+ - Pathology Scoring Algorithms from confidential hospital records and medcal sensors readings
+ - Augmented Collaborative Cyberscurity threat detection using secret comparaisons and aggregations of IOCs
  - etc...
 
 ## Secure Multi-Party Computation (sMPC)

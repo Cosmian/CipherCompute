@@ -3,7 +3,7 @@
 CipherCompute is the [Cosmian](https://cosmian.com) product that enables **collaborative confidential computations** between a set of participants.
 
 
- - [The millionaires](the-millionaires)
+ - [The millionaires](#the-millionaires)
  - [Secure Multi-Party Computation (sMPC)](#secure-multi-party-computation-smpc)
  - [Free access to EAPs for developers and experimentation](#free-access-to-eaps-for-developers-and-experimentation)
  - [Install & Start](#install-&-start)

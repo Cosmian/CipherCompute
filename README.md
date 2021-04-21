@@ -94,11 +94,14 @@ Now login to Bob at http://localhost:3001 to accept the invitation
 
  - click on `Participants` in the main menu 
  - accept participant 0 by clicking on the accept button
+ - 
  ![accept participant](./images/accept_participant.png)
- - Redo the same operation to add participant 2 with URL: `http://orchestrator_2:9002`
+ 
+ - Redo the same operation to add Charlie as participant 2 with URL: `http://orchestrator_2:9002`
 
 
 Once complete, all participants should show as approved on Alice screen
+
  ![all participants](./images/all_participants.png)
 
 

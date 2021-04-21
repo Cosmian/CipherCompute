@@ -8,7 +8,7 @@ CipherCompute is the [Cosmian](https://cosmian.com) product that enables **colla
  - [Free access to EAPs for developers and experimentation](#free-access-to-eaps-for-developers-and-experimentation)
  - [Install & Start](#install-&-start)
  - [Quickstart Guide](#quickstart-guide)
- - [Congratulations and next steps](congratulations-and-next-steps)
+ - [Congratulations and next steps](#congratulations-and-next-steps)
 
 
 ## The millionaires

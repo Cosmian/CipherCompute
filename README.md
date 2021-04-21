@@ -23,7 +23,14 @@ CipherCompute provides them with all the tools to
 
  The [Quickstart Guide](#quickstart-guide) shows you how to do this and more, quickly and for free using the [EAP version](#free-access-to-eaps-for-developers-and-experimentation) of CipherCompute
 
-Given the genericity and expressiveness of `rust` to write algorithms, CipherCompute is used to solve many different collaborative confidential computation problems across many industries.
+Given the genericity and expressiveness of `rust` to write algorithms, CipherCompute is used to solve many different collaborative confidential computation problems across many industries (banking, health, industrial, defense etc...):
+
+ - Key Performance Indicators comparaisons beween entities that do mot want to share their financial and operational data (the business version of the millionaires)
+ - Datasets Generation and Anonymization from confidential sources for Data Science and Federated Learning (see [mpc_join](https://github.com/Cosmian/mpc_join))
+ - Collision and Interception detection from confidential trajectory sources
+ - Pathology scoring algorithms from confidential hospital records and medcal sensors readings
+ - Augmented collaborative cyberscurity threat detection using secret comparaisons of IOCs
+ - etc...
 
 ## Secure Multi-Party Computation (sMPC)
 

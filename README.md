@@ -206,7 +206,7 @@ Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3002
 ### Run the Computation
 
 The rust code is going to be pulled on all the machines, compiled and interactively executed.
-When the computation completes (about 30 seconds), Alice screen will display the results
+When the computation completes (about 30 seconds on 1st run, less on subsequent runs), Alice screen will display the results
 
  - column 1: the year
  - column 2: Alice wealth

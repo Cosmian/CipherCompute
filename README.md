@@ -19,7 +19,7 @@ CipherCompute provides them with all the tools to
  - write an algorithm in a high level language ([rust](https://www.rust-lang.org/)) to solve this problem
  - deploy the algorithm and orchestrate the participants approval process to perform the computation using a nice modern UI
  - run the algorithm as a confidential computation
- - selectively disclose the results to the participants (the algorithm reveals her rank to Alice but dose not reveal it to Bob and Charlie)
+ - selectively disclose the results to the participants (the algorithm reveals her rank to Alice but does not reveal it to Bob and Charlie)
 
  The [Quickstart Guide](#quickstart-guide) shows you how to do this and more, quickly and for free using the [EAP version](#free-access-to-eaps-for-developers-and-experimentation) of CipherCompute
 

@@ -124,7 +124,7 @@ Fill in the computation details:
  - Name: `Millionaires` (or whatever name you fancy)
  - Participants: select `Participant_1` and `Participant_2`
  - Repository: this is where the algorithm code is available: https://github.com/Cosmian/mpc_millionaires 
- - Commit: the exact version of the code: `d52b4d9f8af20efce51ff79f3a5950dadb553d76`
+ - Commit: the exact version of the code: `146643589eb66085c2fc51b81b836435f4e90b2a`
  - Code preview url: an URL other participants can click to have a quick look at the code: https://github.com/Cosmian/mpc_millionaires/blob/main/src/main.rs
  - Description: something meaningful for Bob and Charlie: `Who is the richest ?`
  

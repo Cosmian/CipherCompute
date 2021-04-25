@@ -36,7 +36,7 @@ Given the genericity and expressiveness of `rust` to write algorithms, CipherCom
 
 The EAP version of CipherCompute in this repository mostly relies on an advanced cryptographic primitive known as **Secure Multi-Party Computation** and software developed in a joint effort with the University of KU Leuven around the [SCALE](https://github.com/KULeuven-COSIC/SCALE-MAMBA) engine. 
 
-In a nutshell MPC offers the ability to perform a confidential collaborative computation without moving or sharing data and by distributing an algorithm on participants servers. The servers will interact during the computation phase ard exchange encrypted intermediate results. It is formally proven that these exchanges do not reveal anything of the actual data behind the servers.
+In a nutshell MPC offers the ability to perform a confidential collaborative computation without moving or sharing data and by distributing an algorithm on participants servers. The servers will interact during the computation phase and exchange encrypted intermediate results. It is formally proven that these exchanges do not reveal anything of the actual data behind the servers.
 
 That participants data does not move, is one of the most attractive aspect of sMPC: improved RGPD compliance, reduced CyberSecurity risk, etc...
 

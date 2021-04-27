@@ -14,7 +14,7 @@ CipherCompute is the [Cosmian](https://cosmian.com) product that enables **colla
 ## The millionaires
 
 Alice, Bob and Charlie are millionaires and want to rank their wealth without revealing their actual wealth to each other.
-CipherCompute provides them with all the tools to 
+CipherCompute provides them with all the enterprise tools to 
 
  - write an algorithm in a high level language ([rust](https://www.rust-lang.org/)) to solve this problem: [right here !](https://github.com/Cosmian/mpc_millionaires)
  - deploy the algorithm and orchestrate the participants approval process to perform the computation using a nice modern UI

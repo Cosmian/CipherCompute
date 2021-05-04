@@ -1,6 +1,6 @@
 # CipherCompute
 
-CipherCompute is the [Cosmian](https://cosmian.com) product that enables **collaborative confidential computations** between a set of participants.
+CipherCompute is the [Cosmian](https://cosmian.com) enteprise product that enables **collaborative confidential computations** between a set of participants. It provides the cryptographic engine, computation setup and approval user interfaces, integration into enterprise IT, loogging and auditing.
 
 
  - [The millionaires](#the-millionaires)

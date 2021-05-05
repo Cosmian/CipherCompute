@@ -41,7 +41,7 @@ services:
   #
   runtime_0:
     container_name: runtime_0
-    image: cosmian/ciphercompute:v1.1.2
+    image: cosmian/ciphercompute:v1.2.0
     environment:
       - PUBLIC_SERVER_NAME=localhost
       - PUBLIC_SERVER_ADDRESS=http://localhost:10000
@@ -55,7 +55,7 @@ services:
 
   runtime_1:
     container_name: runtime_1
-    image: cosmian/ciphercompute:v1.1.2
+    image: cosmian/ciphercompute:v1.2.0
     environment:
       - PUBLIC_SERVER_NAME=localhost
       - PUBLIC_SERVER_ADDRESS=http://localhost:10001
@@ -69,7 +69,7 @@ services:
 
   runtime_2:
     container_name: runtime_2
-    image: cosmian/ciphercompute:v1.1.2
+    image: cosmian/ciphercompute:v1.2.0
     environment:
       - PUBLIC_SERVER_NAME=localhost
       - PUBLIC_SERVER_ADDRESS=http://localhost:10002
@@ -86,7 +86,7 @@ services:
   #
   orchestrator_0:
     container_name: orchestrator_0
-    image: cosmian/orchestrator:v1.1.2
+    image: cosmian/orchestrator:v1.2.0
     environment:
       - SERVER_NAME=Participant_0
       - SERVER_ADDRESS=http://orchestrator_0:9000
@@ -107,7 +107,7 @@ services:
 
   orchestrator_1:
     container_name: orchestrator_1
-    image: cosmian/orchestrator:v1.1.2
+    image: cosmian/orchestrator:v1.2.0
     environment:
       - SERVER_NAME=Participant_1
       - SERVER_ADDRESS=http://orchestrator_1:9001
@@ -128,7 +128,7 @@ services:
 
   orchestrator_2:
     container_name: orchestrator_2
-    image: cosmian/orchestrator:v1.1.2
+    image: cosmian/orchestrator:v1.2.0
     environment:
       - SERVER_NAME=Participant_2
       - SERVER_ADDRESS=http://orchestrator_2:9002
@@ -152,7 +152,7 @@ services:
   #
   orchestrator_ui_0:
     container_name: orchestrator_ui_0
-    image: cosmian/orchestrator_ui:v1.1.2
+    image: cosmian/orchestrator_ui:v1.2.0
     environment:
       - REACT_APP_API_URL=http://localhost:9000
     volumes:
@@ -163,7 +163,7 @@ services:
 
   orchestrator_ui_1:
     container_name: orchestrator_ui_1
-    image: cosmian/orchestrator_ui:v1.1.2
+    image: cosmian/orchestrator_ui:v1.2.0
     environment:
       - REACT_APP_API_URL=http://localhost:9001
     volumes:
@@ -174,7 +174,7 @@ services:
 
   orchestrator_ui_2:
     container_name: orchestrator_ui_2
-    image: cosmian/orchestrator_ui:v1.1.2
+    image: cosmian/orchestrator_ui:v1.2.0
     environment:
       - REACT_APP_API_URL=http://localhost:9002
     volumes:

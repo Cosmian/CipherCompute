@@ -12,7 +12,7 @@ services:
       - POSTGRES_PASSWORD=orchestrator
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - ./data/participant_0:/var/lib/postgresql/data
+      - ./data/participant_0/container:/var/lib/postgresql/data
 
   db_1:
     container_name: db_1
@@ -23,7 +23,7 @@ services:
       - POSTGRES_PASSWORD=orchestrator
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - ./data/participant_1:/var/lib/postgresql/data
+      - ./data/participant_1/container:/var/lib/postgresql/data
 
   db_2:
     container_name: db_2
@@ -34,7 +34,7 @@ services:
       - POSTGRES_PASSWORD=orchestrator
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - ./data/participant_2:/var/lib/postgresql/data
+      - ./data/participant_2/container:/var/lib/postgresql/data
 
   #
   ## Runtime players
@@ -46,7 +46,7 @@ services:
       - PUBLIC_SERVER_NAME=localhost
       - PUBLIC_SERVER_ADDRESS=http://localhost:10000
     volumes:
-      - ./data/participant_0:/root/cosmian_data
+      - ./data/participant_0/container:/root/cosmian_data
     ports:
       - "10000:10000"
       - "5000:5000"
@@ -60,7 +60,7 @@ services:
       - PUBLIC_SERVER_NAME=localhost
       - PUBLIC_SERVER_ADDRESS=http://localhost:10001
     volumes:
-      - ./data/participant_1:/root/cosmian_data
+      - ./data/participant_1/container:/root/cosmian_data
     ports:
       - "10001:10001"
       - "5001:5001"
@@ -74,7 +74,7 @@ services:
       - PUBLIC_SERVER_NAME=localhost
       - PUBLIC_SERVER_ADDRESS=http://localhost:10002
     volumes:
-      - ./data/participant_2:/root/cosmian_data
+      - ./data/participant_2/container:/root/cosmian_data
     ports:
       - "10002:10002"
       - "5002:5002"
@@ -97,7 +97,7 @@ services:
       - PERSIST_DATA=true
       - DATABASE_URL=postgres://orchestrator:orchestrator@db_0/orchestrator
     volumes:
-      - ./data/participant_0:/root/cosmian_data
+      - ./data/participant_0/container:/root/cosmian_data
     ports:
       - "9000:9000"
     command: /root/cosmian_server/orchestrator
@@ -118,7 +118,7 @@ services:
       - PERSIST_DATA=true
       - DATABASE_URL=postgres://orchestrator:orchestrator@db_1/orchestrator
     volumes:
-      - ./data/participant_1:/root/cosmian_data
+      - ./data/participant_1/container:/root/cosmian_data
     ports:
       - "9001:9001"
     command: /root/cosmian_server/orchestrator
@@ -139,7 +139,7 @@ services:
       - PERSIST_DATA=true
       - DATABASE_URL=postgres://orchestrator:orchestrator@db_2/orchestrator
     volumes:
-      - ./data/participant_2:/root/cosmian_data
+      - ./data/participant_2/container:/root/cosmian_data
     ports:
       - "9002:9002"
     command: /root/cosmian_server/orchestrator
@@ -155,21 +155,30 @@ services:
     image: cosmian/orchestrator_ui:v1.1.2
     environment:
       - REACT_APP_API_URL=http://localhost:9000
+    volumes:
+      - ./data/nginx.conf:/etc/nginx/nginx.conf
+      - ./data/participant_0/certs:/etc/nginx/certs
     ports:
-      - "3000:80"
+      - "3000:443"
 
   orchestrator_ui_1:
     container_name: orchestrator_ui_1
     image: cosmian/orchestrator_ui:v1.1.2
     environment:
       - REACT_APP_API_URL=http://localhost:9001
+    volumes:
+      - ./data/nginx.conf:/etc/nginx/nginx.conf
+      - ./data/participant_1/certs:/etc/nginx/certs
     ports:
-      - "3001:80"
+      - "3001:443"
 
   orchestrator_ui_2:
     container_name: orchestrator_ui_2
     image: cosmian/orchestrator_ui:v1.1.2
     environment:
       - REACT_APP_API_URL=http://localhost:9002
+    volumes:
+      - ./data/nginx.conf:/etc/nginx/nginx.conf
+      - ./data/participant_2/certs:/etc/nginx/certs
     ports:
-      - "3002:80"
+      - "3002:443"

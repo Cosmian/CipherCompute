@@ -160,6 +160,7 @@ services:
       - ./data/participant_0/certs:/etc/nginx/certs
     ports:
       - "3000:443"
+      - "4000:80"
 
   orchestrator_ui_1:
     container_name: orchestrator_ui_1
@@ -171,6 +172,7 @@ services:
       - ./data/participant_1/certs:/etc/nginx/certs
     ports:
       - "3001:443"
+      - "4001:80"
 
   orchestrator_ui_2:
     container_name: orchestrator_ui_2
@@ -182,3 +184,4 @@ services:
       - ./data/participant_2/certs:/etc/nginx/certs
     ports:
       - "3002:443"
+      - "4002:80"

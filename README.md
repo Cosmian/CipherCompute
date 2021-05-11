@@ -63,16 +63,24 @@ sudo docker-compose up
 
 Docker will pull the required containers and start them. Once running, the 3 participants web user interfaces are available at:
 
- - Participant 0 (a.k.a Player 0): http://localhost:3000
- - Participant 1 (a.k.a Player 1): http://localhost:3001
- - Participant 2 (a.k.a Player 2): http://localhost:3002
+ - Participant 0 (a.k.a Player 0): https://localhost:3000
+ - Participant 1 (a.k.a Player 1): https://localhost:3001
+ - Participant 2 (a.k.a Player 2): https://localhost:3002
  
+<u>Note</u>: user interfaces are still reachable using plain HTTP at:
+
+ - Participant 0: http://localhost:4000
+ - Participant 1: http://localhost:4001
+ - Participant 2: http://localhost:4002
+
  An admin user is pre-created on each instance:
 
   - username: `hello@world.com`
   - password: `azerty`
 
-A successful login will get you to the dashboard ![dashboard](./images/dashboard.png)
+A successful login will get you to the dashboard
+
+![dashboard](./images/dashboard.png)
 
 ## Quickstart Guide
 
@@ -236,7 +244,6 @@ These projects provide documentation to help you get started hacking your own MP
 ## Known caveats with the EAP developer version
 
 These are EAPs, not production versions:
-- UIs are accessed on plain HTTP
 - communication between components __other than the communication linked to the MPC protocol which is encrypted and formally proven secure__ is NOT encrypted.
 
 Others:

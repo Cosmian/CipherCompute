@@ -28,7 +28,7 @@ Given the genericity and expressiveness of `rust` to write algorithms, CipherCom
  - Key Performance Indicators comparaisons beween entities that do not want to share their financial and operational data (the business version of the millionaires)
  - Datasets Generation and Anonymization from confidential sources for Data Science and Federated Learning (see [mpc_join](https://github.com/Cosmian/mpc_join))
  - Collision and Interception detection from confidential trajectory sources
- - Pathology Scoring Algorithms from confidential hospital records and medcal sensors readings
+ - Pathology Scoring Algorithms from confidential hospital records and medical sensors readings
  - Augmented Collaborative Cyberscurity threat detection using secret comparaisons and aggregations of IOCs
  - etc...
 

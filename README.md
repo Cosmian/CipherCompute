@@ -73,14 +73,14 @@ Docker will pull the required containers and start them. Once running, the 3 par
  - Participant 1: http://localhost:4001
  - Participant 2: http://localhost:4002
 
- An admin user is pre-created on each instance:
+ Create a new admin user on each instance:
 
-  - username: `hello@world.com`
-  - password: `azerty`
+![01-signup](https://user-images.githubusercontent.com/49536838/123419585-ad1e2780-d5ba-11eb-9a48-513cc1db0ac3.png)
 
-A successful login will get you to the dashboard
+A successful sign-up will get you to the dashboard:
 
-![dashboard](./images/dashboard.png)
+![02-dashboard](https://user-images.githubusercontent.com/49536838/123430262-456ed900-d5c8-11eb-9f36-ef4b88cefbdd.png)
+
 
 ## Quickstart Guide
 
@@ -101,23 +101,22 @@ A relationship must first be established between the participants: Participant 0
  - click on `Participants` in the main menu 
  - then `Add new participant`
  - enter the URL for Bob: `http://orchestrator_1:9001` and a description
-![add participant](./images/participants.png)
+![03-add-bob](https://user-images.githubusercontent.com/49536838/123430282-4c95e700-d5c8-11eb-87a5-67ba523980d6.png)
+
  - redo the same operation to add Charlie with URL: `http://orchestrator_2:9002`
-  ![invited_participants.png](./images/invited_participants.png)
+![04-add-charly](https://user-images.githubusercontent.com/49536838/123430305-51f33180-d5c8-11eb-9c4d-5e6833e10387.png)
 
 Now login to Bob at http://localhost:3001 to accept the invitation
 
  - click on `Participants` in the main menu 
  - accept participant 0 (Alice) by clicking on the accept button
- 
- ![accept participant](./images/accept_participant.png)
- 
- - Redo the same operation to add Charlie as participant 2 with URL: `http://orchestrator_2:9002`
+![05-approve-participant](https://user-images.githubusercontent.com/49536838/123430327-591a3f80-d5c8-11eb-9399-64f642e9f561.png)
 
+ - Redo the same operation to add Charlie as participant 2 with URL: `http://orchestrator_2:9002`
 
 Once complete, all participants should show as approved on Alice screen
 
- ![all participants](./images/all_participants.png)
+![06-all-participant-approved](https://user-images.githubusercontent.com/49536838/123430378-65060180-d5c8-11eb-9af3-cadf6a32c95a.png)
 
 
 ### Create the computation
@@ -131,12 +130,13 @@ Alice will act as the computation leader: she will create the computation and pr
 Fill in the computation details:
  - Name: `Millionaires` (or whatever name you fancy)
  - Participants: select `Participant_1` and `Participant_2`
- - Repository: this is where the algorithm code is available: https://github.com/Cosmian/mpc_millionaires 
- - Commit: the exact version of the code: `146643589eb66085c2fc51b81b836435f4e90b2a`
- - Code preview url: an URL other participants can click to have a quick look at the code: https://github.com/Cosmian/mpc_millionaires/blob/main/src/main.rs
- - Description: something meaningful for Bob and Charlie: `Who is the richest ?`
+ - Repository: this is where the algorithm code is available: https://github.com/Cosmian/mpc_millionaires.git![02-dashboard](https://user-images.githubusercontent.com/49536838/123430248-3f78f800-d5c8-11eb-8bad-f47aaa31777b.png)
  
-![computation part 1](./images/computation_part_1.png)
+ - Commit: the exact version of the code: `6dc6aeeab6bbb02a68afeaa4f909b9fd9e18e91a`
+ - Code preview url: an URL other participants can click to have a quick look at the code: https://github.com/Cosmian/mpc_millionaires/blob/main/src/main.rs
+ - Description: something meaningful for Bob and Charlie: `Who is the richest?`
+ 
+![07-computation-step01](https://user-images.githubusercontent.com/49536838/123430392-6a634c00-d5c8-11eb-9aee-2a1044d44016.png)
 
 
 In the next screen, we will specify the meta-data of the data expected to be provided by Alice, Bob and Charlie. Start with us (Alice)
@@ -149,8 +149,8 @@ In the next screen, we will specify the meta-data of the data expected to be pro
     - `wealth`: `amount`
 - Provide simulation data: this is sample data that can be provided to the approvers for them to easily simulate the computation before approving it. You can leave blank or use: https://raw.githubusercontent.com/Cosmian/mpc_millionaires/main/data/inputs/player_0.json
 
+![08-computation-step02-end](https://user-images.githubusercontent.com/49536838/123430410-6f280000-d5c8-11eb-8287-bc95130920da.png)
 
-![computation datasets](./images/computation_datasets.png)
 
 Then request Bob's data: 
 
@@ -167,21 +167,22 @@ Finally, request Charlie's data:
 
 Then click `Create Computation` 
 
-![create_computation](./images/create_computation.png)
+![08-computation-step02-end](https://user-images.githubusercontent.com/49536838/123424738-87e0e780-d5c1-11eb-9f6a-13208ee6ed69.png)
+
 
 Review the Computation and click `Submit Draft`
 
-![submit_draft.png](./images/submit_draft.png)
+![09-computation-step3](https://user-images.githubusercontent.com/49536838/123424780-95966d00-d5c1-11eb-9d40-c8578a6152de.png)
 
 ### Provide access to the dataset and approve the computation
 
 Now that the computation has been specified, Alice, Bob and Charlie need to link their actual dataset to the computation and approve it.
 
-On Alice, from the `Computations` menu, access the computation by clicking `Review` and click `Provide dataset` at the bottom of the screen
+On Alice, from the `Computations` menu, access the computation by clicking `Review` and click `Provide dataset` at the bottom of the screen:
 
-![provide dataset](./images/provide_dataset.png)
+![10-provide-ds-btn](https://user-images.githubusercontent.com/49536838/123426842-2ec68300-d5c4-11eb-9ed9-0263b534dbbb.png)
 
-then fill in the required details:
+Then fill in the required details:
 
  - Name: `Alice Wealth`
  - Description: `A 2 column dataset (year, wealth) sorted by year ascending`
@@ -195,17 +196,19 @@ then fill in the required details:
     - `year` > `year` 
     - `wealth` > ` wealth`
 
-  Click `Submit datasource`
+Click `Submit datasource`
 
-![datasource](./images/datasource.png)
+![11-provide-ds-alice](https://user-images.githubusercontent.com/49536838/123426873-384feb00-d5c4-11eb-8875-1e5df2f23704.png)
+
 
 Review all the data entered and click `Approve`
 
-![approve](./images/approve.png)
+![12-approve](https://user-images.githubusercontent.com/49536838/123426907-4271e980-d5c4-11eb-9fee-70c7a99ec606.png)
+
 
 The computation is now submitted for approval to all other participants.
 
-![missing approvals](./images/missing_approvals.png)
+![13-waiting-for-approval](https://user-images.githubusercontent.com/49536838/123426944-4dc51500-d5c4-11eb-909a-e8396c1a0fdd.png)
 
 
 Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3002) and perform the same steps to link their datasets. All data to enter is identical except for the files:
@@ -213,9 +216,9 @@ Now login to both Bob (http://localhost:3001) and Charlie (http://localhost:3002
  - Bob: `bob.csv`
  - Charlie: `charlie.csv`
 
- Once completed, go back to Alice and  from the `Computations` menu, access the computation by clicking `Review`. All participants have now approved the computation and it is ready to run
+Once completed, go back to Alice and  from the `Computations` menu, access the computation by clicking `Review`. All participants have now approved the computation and it is ready to run. Click on `Run computation`
 
- ![all_aprroved](./images/all_approved.png)
+![14-run-computation](https://user-images.githubusercontent.com/49536838/123426991-5ae20400-d5c4-11eb-8e65-aaac0811f591.png)
 
 
 ### Run the Computation
@@ -228,7 +231,8 @@ When the computation completes (about 30 seconds on 1st run, less on subsequent 
  - column 3: the sum of the 3 wealths
  - column 4: Alice rank
 
-![results_alice](./images/results_alice.png)
+![15-results](https://user-images.githubusercontent.com/49536838/123427067-71885b00-d5c4-11eb-8897-f21880fd1c6a.png)
+
 
 Check Bob and Charlie results on their own instance.
 

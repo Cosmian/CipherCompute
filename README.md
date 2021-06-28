@@ -130,7 +130,7 @@ Alice will act as the computation leader: she will create the computation and pr
 Fill in the computation details:
  - Name: `Millionaires` (or whatever name you fancy)
  - Participants: select `Participant_1` and `Participant_2`
- - Repository: this is where the algorithm code is available: https://github.com/Cosmian/mpc_millionaires.git![02-dashboard](https://user-images.githubusercontent.com/49536838/123430248-3f78f800-d5c8-11eb-8bad-f47aaa31777b.png)
+ - Repository: this is where the algorithm code is available: https://github.com/Cosmian/mpc_millionaires.git
  
  - Commit: the exact version of the code: `6dc6aeeab6bbb02a68afeaa4f909b9fd9e18e91a`
  - Code preview url: an URL other participants can click to have a quick look at the code: https://github.com/Cosmian/mpc_millionaires/blob/main/src/main.rs
